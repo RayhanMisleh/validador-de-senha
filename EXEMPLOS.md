@@ -6,7 +6,7 @@
 
 **Requisição (cURL):**
 ```bash
-curl -X POST http://localhost:3000/validar-senha \
+curl -X POST http://localhost:3001/validar-senha \
   -H "Content-Type: application/json" \
   -d '{"senha":"Abcdef1!"}'
 ```

@@ -9,7 +9,7 @@ const passwordRoutes = require('./routes/password.routes');
 const errorHandler = require('./middlewares/errorHandler');
 
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3001;
 
 // Middlewares de segurança e parsing
 app.use(helmet()); // Segurança com headers HTTP

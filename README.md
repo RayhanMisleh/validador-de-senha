@@ -1,5 +1,7 @@
 # 🔐 Password Validator Microservice
 
+> Documentação da API: `docs/API.md`
+
 Microsserviço de validação de senhas com regras customizadas implementadas usando **Regex** (sem loops). Desenvolvido em Node.js com Express seguindo boas práticas de desenvolvimento backend.
 
 ## 📋 Descrição
@@ -43,7 +45,7 @@ npm run dev
 npm start
 ```
 
-O servidor estará disponível em: `http://localhost:3000`
+O servidor estará disponível em: `http://localhost:3001`
 
 ### Executando os Testes
 
@@ -78,7 +80,7 @@ Content-Type: application/json
 #### 1. Usando cURL (Senha Válida)
 
 ```bash
-curl -X POST http://localhost:3000/validar-senha \
+curl -X POST http://localhost:3001/validar-senha \
   -H "Content-Type: application/json" \
   -d '{"senha":"Abcdef1!"}'
 ```
@@ -94,7 +96,7 @@ curl -X POST http://localhost:3000/validar-senha \
 #### 2. Usando cURL (Senha Inválida)
 
 ```bash
-curl -X POST http://localhost:3000/validar-senha \
+curl -X POST http://localhost:3001/validar-senha \
   -H "Content-Type: application/json" \
   -d '{"senha":"abc123"}'
 ```
@@ -114,7 +116,7 @@ curl -X POST http://localhost:3000/validar-senha \
 #### 3. Usando HTTPie (Senha Válida)
 
 ```bash
-http POST localhost:3000/validar-senha senha="MyP@ssw0rd123"
+http POST localhost:3001/validar-senha senha="MyP@ssw0rd123"
 ```
 
 **Resposta:**
@@ -128,7 +130,7 @@ http POST localhost:3000/validar-senha senha="MyP@ssw0rd123"
 #### 4. Usando HTTPie (Senha Inválida)
 
 ```bash
-http POST localhost:3000/validar-senha senha="semsenha"
+http POST localhost:3001/validar-senha senha="semsenha"
 ```
 
 **Resposta:**
@@ -146,7 +148,7 @@ http POST localhost:3000/validar-senha senha="semsenha"
 #### 5. Requisição sem o campo senha (400 Bad Request)
 
 ```bash
-curl -X POST http://localhost:3000/validar-senha \
+curl -X POST http://localhost:3001/validar-senha \
   -H "Content-Type: application/json" \
   -d '{}'
 ```
@@ -166,7 +168,7 @@ curl -X POST http://localhost:3000/validar-senha \
 ### Passo 1: Criar requisição POST
 1. Abra o Insomnia ou Postman
 2. Crie uma nova requisição POST
-3. URL: `http://localhost:3000/validar-senha`
+3. URL: `http://localhost:3001/validar-senha`
 4. Selecione Body → JSON
 
 ### Passo 2: Testar senha válida
@@ -303,7 +305,7 @@ O serviço fornece um endpoint de health check:
 **GET** `/`
 
 ```bash
-curl http://localhost:3000/
+curl http://localhost:3001/
 ```
 
 **Resposta:**
